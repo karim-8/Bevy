@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DDE44283-6BCE-4074-9062-2EFC17BABD00"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86C014E4-A439-47A0-B49D-E4645C5C3D96"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bevy/HomeScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C3DCCE0-4DA7-4B73-BB6C-E34ADCDE1852"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bevy/Splash Screen/SplashScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE23A898-9706-4122-9535-48260AF45A4C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bevy/Splash Screen/SplashScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2046CEC8-6823-44C6-BAF5-F8EF65CC9872"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bevy/Splash Screen/SplashScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "animateSplashLogo(view:bevyLogo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "924E645B-8046-4F65-9B61-B2F10823D759"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bevy/Splash Screen/SplashScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "animationExcution(view:bevyLogo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "924E645B-8046-4F65-9B61-B2F10823D759 - 818093980f092490"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Bevy.SplashScreenViewModel.animationExcution(view: __C.UIView, bevyLogo: __C.UIImageView) -&gt; ()"
+                  moduleName = "Bevy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karim/Desktop/Bevy%20Task/Bevy/Bevy/Splash%20Screen/SplashScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "47">
+               </Location>
+               <Location
+                  uuid = "924E645B-8046-4F65-9B61-B2F10823D759 - d1a9e1246064251f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Bevy.SplashScreenViewModel.animationExcution(view: __C.UIView, bevyLogo: __C.UIImageView) -&gt; ()"
+                  moduleName = "Bevy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karim/Desktop/Bevy%20Task/Bevy/Bevy/Splash%20Screen/SplashScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B7E1A03-E7CE-4943-9EDD-516A8044C0CE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bevy/Splash Screen/SplashScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "animationExcution(view:bevyLogo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

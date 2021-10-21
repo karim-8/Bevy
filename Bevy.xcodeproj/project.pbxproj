@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		8A8085A927217E0000A4F146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085A827217E0000A4F146 /* AppDelegate.swift */; };
 		8A8085AB27217E0000A4F146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085AA27217E0000A4F146 /* SceneDelegate.swift */; };
-		8A8085AD27217E0000A4F146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085AC27217E0000A4F146 /* ViewController.swift */; };
+		8A8085AD27217E0000A4F146 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085AC27217E0000A4F146 /* SplashScreenViewController.swift */; };
 		8A8085B027217E0000A4F146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8085AE27217E0000A4F146 /* Main.storyboard */; };
 		8A8085B227217E0100A4F146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8085B127217E0100A4F146 /* Assets.xcassets */; };
 		8A8085B527217E0100A4F146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8085B327217E0100A4F146 /* LaunchScreen.storyboard */; };
 		8A8085C027217E0100A4F146 /* BevyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085BF27217E0100A4F146 /* BevyTests.swift */; };
 		8A8085CB27217E0100A4F146 /* BevyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085CA27217E0100A4F146 /* BevyUITests.swift */; };
+		8A8085E02721B17700A4F146 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085DF2721B17700A4F146 /* HomeScreenViewController.swift */; };
+		8A8085E22721B6B500A4F146 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E12721B6B500A4F146 /* SplashScreenViewModel.swift */; };
+		8A8085E42721B74900A4F146 /* SplashScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E32721B74900A4F146 /* SplashScreenCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,7 @@
 		8A8085A527217E0000A4F146 /* Bevy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bevy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8085A827217E0000A4F146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8085AA27217E0000A4F146 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8A8085AC27217E0000A4F146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A8085AC27217E0000A4F146 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		8A8085AF27217E0000A4F146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A8085B127217E0100A4F146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A8085B427217E0100A4F146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		8A8085C627217E0100A4F146 /* BevyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8085CA27217E0100A4F146 /* BevyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BevyUITests.swift; sourceTree = "<group>"; };
 		8A8085CC27217E0100A4F146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8085DF2721B17700A4F146 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		8A8085E12721B6B500A4F146 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
+		8A8085E32721B74900A4F146 /* SplashScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,10 @@
 		8A8085A727217E0000A4F146 /* Bevy */ = {
 			isa = PBXGroup;
 			children = (
+				8A8085D827218D9600A4F146 /* Splash Screen */,
 				8A8085A827217E0000A4F146 /* AppDelegate.swift */,
 				8A8085AA27217E0000A4F146 /* SceneDelegate.swift */,
-				8A8085AC27217E0000A4F146 /* ViewController.swift */,
+				8A8085DF2721B17700A4F146 /* HomeScreenViewController.swift */,
 				8A8085AE27217E0000A4F146 /* Main.storyboard */,
 				8A8085B127217E0100A4F146 /* Assets.xcassets */,
 				8A8085B327217E0100A4F146 /* LaunchScreen.storyboard */,
@@ -126,6 +133,16 @@
 				8A8085CC27217E0100A4F146 /* Info.plist */,
 			);
 			path = BevyUITests;
+			sourceTree = "<group>";
+		};
+		8A8085D827218D9600A4F146 /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8A8085AC27217E0000A4F146 /* SplashScreenViewController.swift */,
+				8A8085E12721B6B500A4F146 /* SplashScreenViewModel.swift */,
+				8A8085E32721B74900A4F146 /* SplashScreenCoordinator.swift */,
+			);
+			path = "Splash Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A8085AD27217E0000A4F146 /* ViewController.swift in Sources */,
+				8A8085AD27217E0000A4F146 /* SplashScreenViewController.swift in Sources */,
+				8A8085E02721B17700A4F146 /* HomeScreenViewController.swift in Sources */,
 				8A8085A927217E0000A4F146 /* AppDelegate.swift in Sources */,
+				8A8085E42721B74900A4F146 /* SplashScreenCoordinator.swift in Sources */,
 				8A8085AB27217E0000A4F146 /* SceneDelegate.swift in Sources */,
+				8A8085E22721B6B500A4F146 /* SplashScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
