@@ -18,6 +18,9 @@
 		8A8085E02721B17700A4F146 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085DF2721B17700A4F146 /* HomeScreenViewController.swift */; };
 		8A8085E22721B6B500A4F146 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E12721B6B500A4F146 /* SplashScreenViewModel.swift */; };
 		8A8085E42721B74900A4F146 /* SplashScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E32721B74900A4F146 /* SplashScreenCoordinator.swift */; };
+		8A8085E72721CBF200A4F146 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E62721CBF200A4F146 /* EventType.swift */; };
+		8A8085E92721CCDA00A4F146 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E82721CCDA00A4F146 /* EventData.swift */; };
+		8A8085EC2721CE2B00A4F146 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085EB2721CE2B00A4F146 /* NetworkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		8A8085DF2721B17700A4F146 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		8A8085E12721B6B500A4F146 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		8A8085E32721B74900A4F146 /* SplashScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenCoordinator.swift; sourceTree = "<group>"; };
+		8A8085E62721CBF200A4F146 /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
+		8A8085E82721CCDA00A4F146 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		8A8085EB2721CE2B00A4F146 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,8 @@
 		8A8085A727217E0000A4F146 /* Bevy */ = {
 			isa = PBXGroup;
 			children = (
+				8A8085EA2721CDC700A4F146 /* Network Service */,
+				8A8085E52721CBBC00A4F146 /* Data Models */,
 				8A8085D827218D9600A4F146 /* Splash Screen */,
 				8A8085A827217E0000A4F146 /* AppDelegate.swift */,
 				8A8085AA27217E0000A4F146 /* SceneDelegate.swift */,
@@ -143,6 +151,23 @@
 				8A8085E32721B74900A4F146 /* SplashScreenCoordinator.swift */,
 			);
 			path = "Splash Screen";
+			sourceTree = "<group>";
+		};
+		8A8085E52721CBBC00A4F146 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A8085E62721CBF200A4F146 /* EventType.swift */,
+				8A8085E82721CCDA00A4F146 /* EventData.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		8A8085EA2721CDC700A4F146 /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				8A8085EB2721CE2B00A4F146 /* NetworkClient.swift */,
+			);
+			path = "Network Service";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,11 +300,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8085E72721CBF200A4F146 /* EventType.swift in Sources */,
 				8A8085AD27217E0000A4F146 /* SplashScreenViewController.swift in Sources */,
 				8A8085E02721B17700A4F146 /* HomeScreenViewController.swift in Sources */,
 				8A8085A927217E0000A4F146 /* AppDelegate.swift in Sources */,
 				8A8085E42721B74900A4F146 /* SplashScreenCoordinator.swift in Sources */,
+				8A8085EC2721CE2B00A4F146 /* NetworkClient.swift in Sources */,
 				8A8085AB27217E0000A4F146 /* SceneDelegate.swift in Sources */,
+				8A8085E92721CCDA00A4F146 /* EventData.swift in Sources */,
 				8A8085E22721B6B500A4F146 /* SplashScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
