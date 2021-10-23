@@ -11,9 +11,11 @@ class SplashScreenCoordinator {
     
     //MARK:- NAVIGATE TO
     func navigateTo(view: UIViewController) {
-        let homeViewController = HomeScreenViewController()
-        homeViewController.modalTransitionStyle = .crossDissolve
-        homeViewController.modalPresentationStyle = .fullScreen
-        view.present(homeViewController, animated: true, completion: nil)
+        let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home") as? HomeEventsViewController
+        let navigationController = UINavigationController(rootViewController: homeViewController!)
+        navigationController.modalTransitionStyle = .crossDissolve
+        navigationController.modalPresentationStyle = .fullScreen
+        view.present(navigationController, animated: true, completion: nil)
     }
 }
+
