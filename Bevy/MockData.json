@@ -1,0 +1,26 @@
+  [
+    {
+        "storyboardName": "Main",
+        "controllerName": "red",
+        "image": "star.fill",
+        "selectedImage": "star.fill",
+        "order": 0,
+        "title": "Red"
+    },
+    {
+        "storyboardName": "Main",
+        "controllerName": "blue",
+        "image": "flag.fill",
+        "selectedImage": "flag.fill",
+        "order": 1,
+        "title": "Blue"
+    },
+    {
+        "storyboardName": "Main",
+        "controllerName": "cyan",
+        "image": "leaf.fill",
+        "selectedImage": "leaf.fill",
+        "order": 3,
+        "title": "Cyan"
+    }
+  ]

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A3FF5272724098F0083AEE1 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3FF5262724098F0083AEE1 /* EventDetailsViewController.swift */; };
 		8A8085A927217E0000A4F146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085A827217E0000A4F146 /* AppDelegate.swift */; };
 		8A8085AB27217E0000A4F146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085AA27217E0000A4F146 /* SceneDelegate.swift */; };
 		8A8085AD27217E0000A4F146 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085AC27217E0000A4F146 /* SplashScreenViewController.swift */; };
@@ -15,12 +16,16 @@
 		8A8085B527217E0100A4F146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8085B327217E0100A4F146 /* LaunchScreen.storyboard */; };
 		8A8085C027217E0100A4F146 /* BevyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085BF27217E0100A4F146 /* BevyTests.swift */; };
 		8A8085CB27217E0100A4F146 /* BevyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085CA27217E0100A4F146 /* BevyUITests.swift */; };
-		8A8085E02721B17700A4F146 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085DF2721B17700A4F146 /* HomeScreenViewController.swift */; };
 		8A8085E22721B6B500A4F146 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E12721B6B500A4F146 /* SplashScreenViewModel.swift */; };
 		8A8085E42721B74900A4F146 /* SplashScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E32721B74900A4F146 /* SplashScreenCoordinator.swift */; };
 		8A8085E72721CBF200A4F146 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E62721CBF200A4F146 /* EventType.swift */; };
 		8A8085E92721CCDA00A4F146 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085E82721CCDA00A4F146 /* EventData.swift */; };
 		8A8085EC2721CE2B00A4F146 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085EB2721CE2B00A4F146 /* NetworkClient.swift */; };
+		8A8085F32721EABE00A4F146 /* MockData.json in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085F22721EABE00A4F146 /* MockData.json */; };
+		8A8086002722D5FA00A4F146 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A8085F22721EABE00A4F146 /* MockData.json */; };
+		8A80860D2723374200A4F146 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80860C2723374200A4F146 /* MenuCell.swift */; };
+		8A80860F27233FD200A4F146 /* HomeEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80860E27233FD200A4F146 /* HomeEventsViewController.swift */; };
+		8A80861427234CAC00A4F146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80861327234CAC00A4F146 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A3FF5262724098F0083AEE1 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		8A8085A527217E0000A4F146 /* Bevy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bevy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8085A827217E0000A4F146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A8085AA27217E0000A4F146 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,12 +61,15 @@
 		8A8085C627217E0100A4F146 /* BevyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8085CA27217E0100A4F146 /* BevyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BevyUITests.swift; sourceTree = "<group>"; };
 		8A8085CC27217E0100A4F146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A8085DF2721B17700A4F146 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		8A8085E12721B6B500A4F146 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		8A8085E32721B74900A4F146 /* SplashScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenCoordinator.swift; sourceTree = "<group>"; };
 		8A8085E62721CBF200A4F146 /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
 		8A8085E82721CCDA00A4F146 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		8A8085EB2721CE2B00A4F146 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		8A8085F22721EABE00A4F146 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
+		8A80860C2723374200A4F146 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		8A80860E27233FD200A4F146 /* HomeEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsViewController.swift; sourceTree = "<group>"; };
+		8A80861327234CAC00A4F146 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +97,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A3FF5242724047F0083AEE1 /* HomeEventsCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeEventsCell;
+			sourceTree = "<group>";
+		};
+		8A3FF525272409780083AEE1 /* Event Details */ = {
+			isa = PBXGroup;
+			children = (
+				8A3FF5262724098F0083AEE1 /* EventDetailsViewController.swift */,
+			);
+			path = "Event Details";
+			sourceTree = "<group>";
+		};
 		8A80859C27217E0000A4F146 = {
 			isa = PBXGroup;
 			children = (
@@ -111,16 +135,16 @@
 		8A8085A727217E0000A4F146 /* Bevy */ = {
 			isa = PBXGroup;
 			children = (
+				8A8086012722DE7300A4F146 /* Menu Bar */,
+				8A8085F12721D7AC00A4F146 /* Home Events */,
+				8A8085F02721D78D00A4F146 /* Storyboards */,
+				8A8085EF2721D71700A4F146 /* Core */,
+				8A8085EE2721D70400A4F146 /* Configuration */,
+				8A8085ED2721D6EC00A4F146 /* Resources */,
 				8A8085EA2721CDC700A4F146 /* Network Service */,
 				8A8085E52721CBBC00A4F146 /* Data Models */,
 				8A8085D827218D9600A4F146 /* Splash Screen */,
-				8A8085A827217E0000A4F146 /* AppDelegate.swift */,
-				8A8085AA27217E0000A4F146 /* SceneDelegate.swift */,
-				8A8085DF2721B17700A4F146 /* HomeScreenViewController.swift */,
-				8A8085AE27217E0000A4F146 /* Main.storyboard */,
-				8A8085B127217E0100A4F146 /* Assets.xcassets */,
-				8A8085B327217E0100A4F146 /* LaunchScreen.storyboard */,
-				8A8085B627217E0100A4F146 /* Info.plist */,
+				8A8085F22721EABE00A4F146 /* MockData.json */,
 			);
 			path = Bevy;
 			sourceTree = "<group>";
@@ -168,6 +192,59 @@
 				8A8085EB2721CE2B00A4F146 /* NetworkClient.swift */,
 			);
 			path = "Network Service";
+			sourceTree = "<group>";
+		};
+		8A8085ED2721D6EC00A4F146 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A8085B327217E0100A4F146 /* LaunchScreen.storyboard */,
+				8A8085B127217E0100A4F146 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8A8085EE2721D70400A4F146 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				8A8085B627217E0100A4F146 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		8A8085EF2721D71700A4F146 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8A8085AA27217E0000A4F146 /* SceneDelegate.swift */,
+				8A8085A827217E0000A4F146 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8A8085F02721D78D00A4F146 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8A8085AE27217E0000A4F146 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8A8085F12721D7AC00A4F146 /* Home Events */ = {
+			isa = PBXGroup;
+			children = (
+				8A3FF525272409780083AEE1 /* Event Details */,
+				8A3FF5242724047F0083AEE1 /* HomeEventsCell */,
+				8A80860E27233FD200A4F146 /* HomeEventsViewController.swift */,
+			);
+			path = "Home Events";
+			sourceTree = "<group>";
+		};
+		8A8086012722DE7300A4F146 /* Menu Bar */ = {
+			isa = PBXGroup;
+			children = (
+				8A80861327234CAC00A4F146 /* ViewController.swift */,
+				8A80860C2723374200A4F146 /* MenuCell.swift */,
+			);
+			path = "Menu Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8086002722D5FA00A4F146 /* MockData.json in Resources */,
 				8A8085B527217E0100A4F146 /* LaunchScreen.storyboard in Resources */,
 				8A8085B227217E0100A4F146 /* Assets.xcassets in Resources */,
 				8A8085B027217E0000A4F146 /* Main.storyboard in Resources */,
@@ -302,13 +380,17 @@
 			files = (
 				8A8085E72721CBF200A4F146 /* EventType.swift in Sources */,
 				8A8085AD27217E0000A4F146 /* SplashScreenViewController.swift in Sources */,
-				8A8085E02721B17700A4F146 /* HomeScreenViewController.swift in Sources */,
+				8A3FF5272724098F0083AEE1 /* EventDetailsViewController.swift in Sources */,
 				8A8085A927217E0000A4F146 /* AppDelegate.swift in Sources */,
 				8A8085E42721B74900A4F146 /* SplashScreenCoordinator.swift in Sources */,
+				8A80860D2723374200A4F146 /* MenuCell.swift in Sources */,
 				8A8085EC2721CE2B00A4F146 /* NetworkClient.swift in Sources */,
+				8A80861427234CAC00A4F146 /* ViewController.swift in Sources */,
 				8A8085AB27217E0000A4F146 /* SceneDelegate.swift in Sources */,
 				8A8085E92721CCDA00A4F146 /* EventData.swift in Sources */,
 				8A8085E22721B6B500A4F146 /* SplashScreenViewModel.swift in Sources */,
+				8A80860F27233FD200A4F146 /* HomeEventsViewController.swift in Sources */,
+				8A8085F32721EABE00A4F146 /* MockData.json in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +568,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 334JN3ZDA8;
-				INFOPLIST_FILE = Bevy/Info.plist;
+				INFOPLIST_FILE = Bevy/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,7 +587,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 334JN3ZDA8;
-				INFOPLIST_FILE = Bevy/Info.plist;
+				INFOPLIST_FILE = Bevy/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
