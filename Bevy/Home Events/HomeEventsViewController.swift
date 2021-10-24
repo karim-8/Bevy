@@ -11,40 +11,73 @@ class HomeEventsViewController: UIViewController {
 
     @IBOutlet weak var countriesTable: UITableView!
     @IBOutlet weak var menuCollection: UICollectionView!
+    var viewModel: HomeEventsViewModel?
     
-    let countriesArray = [["China", "Japan", "Korea"],
-                          ["Egypt", "Sudan", "South Africa"],
-                          ["Spain", "Netherlands", "France"]]
-    var selectedArray = [String]()
     var selectedIndex = 0
     var selectedIndexPath = IndexPath(item: 0, section: 0)
-    let menuTitles = ["Asia", "Africa", "Europe"]
+    var menuTitles: [EventType]?
+    var eventDetails: [EventData]?
     var indicatorView = UIView()
     let indicatorHeight : CGFloat = 3
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        selectedArray = countriesArray[selectedIndex]
-        menuCollection.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .centeredVertically)
-        
-        
+        setupCollectionItems()
+        setupNavigationBar()
+        setupTableViewItems()
+        setViewSwipe()
+        setCollectionIndicator()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+            
+//            let loader = self.loader()
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                self.stopLoader(loader: loader)
+//            }
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+        setupNavigationBar()
+    }
+    
+    func setupCollectionItems() {
+        self.menuCollection.reloadData()
+        self.menuCollection.selectItem(at: self.selectedIndexPath, animated: false, scrollPosition: .centeredVertically)
+    }
+    
+    func setupTableViewItems() {
+        countriesTable.separatorColor = .clear
+        countriesTable.reloadData()
+    }
+    
+    func setupNavigationBar() {
+        navigationItem.title = "Events"
+        navigationController?.navigationBar.backgroundColor = .gray
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    func setCollectionIndicator() {
+        indicatorView.backgroundColor = .white
+        indicatorView.frame = CGRect(x: menuCollection.bounds.minX, y: menuCollection.bounds.maxY - indicatorHeight, width: menuCollection.bounds.width / CGFloat(menuTitles!.count), height: indicatorHeight)
+        menuCollection.addSubview(indicatorView)
+    }
+    
+    func setViewSwipe() {
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))
         leftSwipe.direction = .left
         self.view.addGestureRecognizer(leftSwipe)
-        
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))
         rightSwipe.direction = .right
         self.view.addGestureRecognizer(rightSwipe)
-        
-        indicatorView.backgroundColor = .white
-        indicatorView.frame = CGRect(x: menuCollection.bounds.minX, y: menuCollection.bounds.maxY - indicatorHeight, width: menuCollection.bounds.width / CGFloat(menuTitles.count), height: indicatorHeight)
-        menuCollection.addSubview(indicatorView)
     }
     
     @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
         if sender.direction == .left {
-            if selectedIndex < menuTitles.count - 1 {
+            if selectedIndex < menuTitles!.count - 1 {
                 selectedIndex += 1
             }
         } else {
@@ -52,7 +85,6 @@ class HomeEventsViewController: UIViewController {
                 selectedIndex -= 1
             }
         }
-        
         selectedIndexPath = IndexPath(item: selectedIndex, section: 0)
         menuCollection.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredVertically)
         refreshContent()
@@ -60,67 +92,53 @@ class HomeEventsViewController: UIViewController {
     
     
     func refreshContent(){
-        selectedArray = countriesArray[selectedIndex]
         countriesTable.reloadData()
-        
-        let desiredX = (menuCollection.bounds.width / CGFloat(menuTitles.count)) * CGFloat(selectedIndex)
-        
+        let desiredX = (menuCollection.bounds.width / CGFloat((menuTitles?.count)!)) * CGFloat(selectedIndex)
         UIView.animate(withDuration: 0.3) {
-             self.indicatorView.frame = CGRect(x: desiredX, y: self.menuCollection.bounds.maxY - self.indicatorHeight, width: self.menuCollection.bounds.width / CGFloat(self.menuTitles.count), height: self.indicatorHeight)
+            self.indicatorView.frame = CGRect(x: desiredX, y: self.menuCollection.bounds.maxY - self.indicatorHeight, width: self.menuCollection.bounds.width / CGFloat((self.menuTitles?.count)!), height: self.indicatorHeight)
         }
     }
-
 }
 
-
-
+//Table View Data
 extension HomeEventsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedArray.count
+        return eventDetails!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = selectedArray[indexPath.row]
+        cell.textLabel?.text = eventDetails?[indexPath.row].name
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-      
         
-//        let detailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? EventDetailsViewController
-//        detailsViewController?.modalTransitionStyle = .crossDissolve
-//        detailsViewController?.modalPresentationStyle = .fullScreen
-//        self.present(detailsViewController!, animated: true, completion: nil)
-        
-        let vc = EventDetailsViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        //navigationController?.pushViewController(detailsViewController!, animated: true)
+        var eventDetailsViewController = EventDetailsViewController()
+        eventDetailsViewController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? EventDetailsViewController)!
+        eventDetailsViewController.detailsItems = eventDetails?[indexPath.row]
+        navigationController?.pushViewController(eventDetailsViewController, animated: true)
     }
 }
-
 
 extension HomeEventsViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menuTitles.count
+        return (menuTitles?.count)!
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! MenuCell
-        cell.setupCell(text: menuTitles[indexPath.item])
+        cell.setupCell(text: (menuTitles?[indexPath.item].name!)!)
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width / CGFloat(menuTitles.count), height: collectionView.bounds.height)
+        return CGSize(width: self.view.frame.width / CGFloat((menuTitles?.count)!), height: collectionView.bounds.height)
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.item
