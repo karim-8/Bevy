@@ -18,8 +18,20 @@ class SplashScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        getEventsTypes()
+        getEventsDataList()
         setBackGroundColor()
         createSplashLogo()
+    }
+    
+    //MARK:- GET EVENTS TYPES
+    func getEventsTypes() {
+        viewModel?.getEventsData(linkType: .EventType)
+    }
+    
+    //MARK:- GET EVENTS List Data
+    func getEventsDataList() {
+        viewModel?.getEventsData(linkType: .Eventdetails)
     }
     
     //MARK:- VIEW DID LAYOUT SUBVIEW
@@ -29,7 +41,7 @@ class SplashScreenViewController: UIViewController {
     
     //MARK:- VIEW DID APPEAR
     override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
             let image = self.viewModel?.animateSplashLogo(view: self.view, bevyLogo: self.bevyLogo)
             self.bevyLogo = image!
         })

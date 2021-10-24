@@ -7,12 +7,6 @@
 
 import Foundation
 
-/// class MyRequest: RequestProtocol {
-///     var url: URL {
-///         return URL()
-///     }
-/// }
-/// ```
 protocol RequestProtocol {
     var url: URL { get }
 }
