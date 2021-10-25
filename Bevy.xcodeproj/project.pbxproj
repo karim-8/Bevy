@@ -27,6 +27,13 @@
 		8AE60C50272467C300785E21 /* HomeEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C4F272467C300785E21 /* HomeEventsViewModel.swift */; };
 		8AE60C5227247D9500785E21 /* HomeEventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C5127247D9500785E21 /* HomeEventsCoordinator.swift */; };
 		8AE60C5527255F6200785E21 /* ActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C5427255F6200785E21 /* ActivityLoader.swift */; };
+		8AE60C5727257A4D00785E21 /* ImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C5627257A4D00785E21 /* ImageResize.swift */; };
+		8AE60C5A2725F16100785E21 /* Bevy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C582725F16100785E21 /* Bevy.xcdatamodeld */; };
+		8AE60C5C2725F4BA00785E21 /* PresetanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C5B2725F4BA00785E21 /* PresetanceService.swift */; };
+		8AE60C6A2725F7C600785E21 /* EventTypeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C662725F7C600785E21 /* EventTypeEntity+CoreDataClass.swift */; };
+		8AE60C6B2725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C672725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift */; };
+		8AE60C6C2725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C682725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift */; };
+		8AE60C6D2725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C692725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		8AE60C4F272467C300785E21 /* HomeEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsViewModel.swift; sourceTree = "<group>"; };
 		8AE60C5127247D9500785E21 /* HomeEventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsCoordinator.swift; sourceTree = "<group>"; };
 		8AE60C5427255F6200785E21 /* ActivityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLoader.swift; sourceTree = "<group>"; };
+		8AE60C5627257A4D00785E21 /* ImageResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResize.swift; sourceTree = "<group>"; };
+		8AE60C592725F16100785E21 /* Bevy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bevy.xcdatamodel; sourceTree = "<group>"; };
+		8AE60C5B2725F4BA00785E21 /* PresetanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetanceService.swift; sourceTree = "<group>"; };
+		8AE60C662725F7C600785E21 /* EventTypeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventTypeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8AE60C672725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventTypeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8AE60C682725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8AE60C692725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +145,7 @@
 		8A8085A727217E0000A4F146 /* Bevy */ = {
 			isa = PBXGroup;
 			children = (
+				8AE60C652725F72900785E21 /* Caching */,
 				8AE60C5327255F4100785E21 /* Extenstions */,
 				8A8085D827218D9600A4F146 /* Splash Screen */,
 				8A8085F12721D7AC00A4F146 /* Home Events */,
@@ -212,6 +227,8 @@
 			children = (
 				8A8085AA27217E0000A4F146 /* SceneDelegate.swift */,
 				8A8085A827217E0000A4F146 /* AppDelegate.swift */,
+				8AE60C582725F16100785E21 /* Bevy.xcdatamodeld */,
+				8AE60C5B2725F4BA00785E21 /* PresetanceService.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -248,8 +265,20 @@
 			isa = PBXGroup;
 			children = (
 				8AE60C5427255F6200785E21 /* ActivityLoader.swift */,
+				8AE60C5627257A4D00785E21 /* ImageResize.swift */,
 			);
 			path = Extenstions;
+			sourceTree = "<group>";
+		};
+		8AE60C652725F72900785E21 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				8AE60C662725F7C600785E21 /* EventTypeEntity+CoreDataClass.swift */,
+				8AE60C672725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift */,
+				8AE60C682725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift */,
+				8AE60C692725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift */,
+			);
+			path = Caching;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,14 +412,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AE60C50272467C300785E21 /* HomeEventsViewModel.swift in Sources */,
+				8AE60C5727257A4D00785E21 /* ImageResize.swift in Sources */,
+				8AE60C6A2725F7C600785E21 /* EventTypeEntity+CoreDataClass.swift in Sources */,
+				8AE60C6B2725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift in Sources */,
 				8A8085E72721CBF200A4F146 /* EventType.swift in Sources */,
+				8AE60C5C2725F4BA00785E21 /* PresetanceService.swift in Sources */,
 				8A8085AD27217E0000A4F146 /* SplashScreenViewController.swift in Sources */,
 				8A3FF5272724098F0083AEE1 /* EventDetailsViewController.swift in Sources */,
 				8A8085A927217E0000A4F146 /* AppDelegate.swift in Sources */,
 				8A8085E42721B74900A4F146 /* SplashScreenCoordinator.swift in Sources */,
+				8AE60C6D2725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift in Sources */,
 				8A80860D2723374200A4F146 /* MenuCell.swift in Sources */,
 				8A8085EC2721CE2B00A4F146 /* NetworkClient.swift in Sources */,
 				8A80861427234CAC00A4F146 /* ViewController.swift in Sources */,
+				8AE60C5A2725F16100785E21 /* Bevy.xcdatamodeld in Sources */,
+				8AE60C6C2725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift in Sources */,
 				8A8085AB27217E0000A4F146 /* SceneDelegate.swift in Sources */,
 				8AE60C5527255F6200785E21 /* ActivityLoader.swift in Sources */,
 				8AE60C5227247D9500785E21 /* HomeEventsCoordinator.swift in Sources */,
@@ -729,6 +765,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8AE60C582725F16100785E21 /* Bevy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8AE60C592725F16100785E21 /* Bevy.xcdatamodel */,
+			);
+			currentVersion = 8AE60C592725F16100785E21 /* Bevy.xcdatamodel */;
+			path = Bevy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8A80859D27217E0000A4F146 /* Project object */;
 }
