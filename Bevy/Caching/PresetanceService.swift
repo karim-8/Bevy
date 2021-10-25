@@ -34,7 +34,6 @@ class PresesistancService {
         if context.hasChanges {
             do {
                 try context.save()
-                print("Data Saved sucess")
                 NotificationCenter.default.post(name: NSNotification.Name("persistantUpdated"), object: nil)
             } catch {
                 let nserror = error as NSError
