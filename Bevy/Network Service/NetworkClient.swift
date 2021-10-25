@@ -13,7 +13,6 @@ protocol RequestProtocol {
 
 class NetworkClient {
     func get(request: RequestProtocol, completion: @escaping (Result<Data, Error>) -> ()){
-        print("The url is.... \(request.url)")
         let urlRequest = URLRequest(url: request.url)
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if error != nil {

@@ -22,6 +22,7 @@ class HomeEventsViewController: UIViewController {
     var eventTypeName = ""
     var currentPageIndex = 0
     
+    //MARK:- VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionItems()
@@ -31,22 +32,27 @@ class HomeEventsViewController: UIViewController {
         setCollectionIndicator()
     }
     
-    
+    //MARK:- VIEW WILL APPEAR
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
         setupNavigationBar()
     }
     
+    //MARK:- SETUP COLLECTION ITEMS
     func setupCollectionItems() {
         self.menuCollection.reloadData()
         self.menuCollection.selectItem(at: self.selectedIndexPath, animated: false, scrollPosition: .centeredVertically)
     }
     
+    //MARK:- SETUP TABLE VIEW ITEMS
     func setupTableViewItems() {
+        let nib = UINib(nibName: "EventHomeTableViewCell", bundle: nil)
+        countriesTable.register(nib, forCellReuseIdentifier: "eventCell")
         countriesTable.separatorColor = .clear
         countriesTable.reloadData()
     }
     
+    //MARK:- SETUP NAVIGATION BAR
     func setupNavigationBar() {
         navigationItem.title = "Events"
         navigationController?.navigationBar.backgroundColor = .gray
@@ -54,12 +60,14 @@ class HomeEventsViewController: UIViewController {
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
     }
     
+    //MARK:- SET COLLECTION INDICATOR
     func setCollectionIndicator() {
         indicatorView.backgroundColor = .cyan
         indicatorView.frame = CGRect(x: menuCollection.bounds.minX, y: menuCollection.bounds.maxY - indicatorHeight, width: menuCollection.bounds.width / CGFloat(menuTitles!.count), height: indicatorHeight)
         menuCollection.addSubview(indicatorView)
     }
     
+    //MARK:- SET SWIPE GESTURE
     func setViewSwipe() {
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))
         leftSwipe.direction = .left
@@ -69,6 +77,7 @@ class HomeEventsViewController: UIViewController {
         self.view.addGestureRecognizer(rightSwipe)
     }
     
+    //MARK:- SWIPE ACTION
     @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
         
         if sender.direction == .left {
@@ -85,11 +94,9 @@ class HomeEventsViewController: UIViewController {
         refreshContent(index: 1)
     }
     
-    
+    //MARK:- REFRESH CONTENT
     func refreshContent(index: Int){
         viewModel?.getEventsData(linkType: .Eventdetails, pageIndex: 0, type: eventTypeName)
-        
-        
         let loader = self.loader()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
             var updatedEvents = self.viewModel?.getEventDetails()
@@ -106,7 +113,11 @@ class HomeEventsViewController: UIViewController {
             }
         }
         self.countriesTable.reloadData()
-        
+    }
+    
+    //MARK:- DEINIT
+    deinit {
+        viewModel = nil
     }
 }
 
@@ -118,19 +129,26 @@ extension HomeEventsViewController : UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = eventDetails?[indexPath.row].name
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventHomeTableViewCell
+        cell.eventName.text = eventDetails?[indexPath.row].name
+        cell.descriptionLabel.text = eventDetails?[indexPath.row].description
+        cell.eventdate.text = eventDetails?[indexPath.row].start_date ?? "12 April"
+        cell.configreImage(image: (eventDetails?[indexPath.row].cover)!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        
         var eventDetailsViewController = EventDetailsViewController()
         eventDetailsViewController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? EventDetailsViewController)!
         eventDetailsViewController.detailsItems = eventDetails?[indexPath.row]
+        eventDetailsViewController.viewModel = EventDetailsViewModel()
         navigationController?.pushViewController(eventDetailsViewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
     }
 }
 
@@ -158,7 +176,7 @@ extension HomeEventsViewController : UICollectionViewDelegate, UICollectionViewD
     }
 }
 
-
+//MARK:- SCROLL VIEW DELEGTES METHODS
 extension HomeEventsViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y

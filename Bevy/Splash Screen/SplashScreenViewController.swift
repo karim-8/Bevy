@@ -69,4 +69,9 @@ class SplashScreenViewController: UIViewController {
         }()
         view.addSubview(bevyLogo)
     }
+    
+    //MARK:- DEINIT
+    deinit {
+        viewModel = nil
+    }
 }
