@@ -44,7 +44,7 @@ class SplashScreenViewModel {
     
     //MARK:- ANIMATE SPLASH LOGO
     func animateSplashLogo(view: UIView, bevyLogo: UIImageView) -> UIImageView {
-        UIView.animate(withDuration: 5, animations: {
+        UIView.animate(withDuration: 3, animations: {
             let size = view.frame.size.width * 3
             let xScale = size - view.frame.size.width
             let yScale = view.frame.size.height - size
@@ -62,7 +62,7 @@ class SplashScreenViewModel {
     
     //MARK:- ANIMATION EXCUTION
     func animationExcution(view: UIView, bevyLogo: UIImageView) {
-        UIView.animate(withDuration: 5, animations: {
+        UIView.animate(withDuration: 3, animations: {
             bevyLogo.alpha = 0
         },completion: { animationDone in
             if animationDone {

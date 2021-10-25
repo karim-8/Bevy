@@ -15,7 +15,7 @@ class MenuCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLabel.backgroundColor = .red
+        titleLabel.backgroundColor = .clear
         titleLabel.alpha = 0.6
     }
     

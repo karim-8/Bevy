@@ -27,6 +27,8 @@ class EventDetailsViewController: UIViewController {
     
     func setEventDetailsData() {
         self.eventName.text = detailsItems?.name
+        
+        self.eventDescription.text = detailsItems?.description
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {

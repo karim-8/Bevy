@@ -24,7 +24,6 @@ class SplashScreenViewController: UIViewController {
         getEventsDataList()
         setBackGroundColor()
         createSplashLogo()
-        
     }
     
     //MARK:- GET EVENTS TYPES

@@ -78,7 +78,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.83921568629999999" green="0.22352941179999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.16225528719999999" green="0.81009727720000002" blue="0.80994719270000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="nod-GR-FDQ" firstAttribute="centerX" secondItem="RYf-P4-mr2" secondAttribute="centerX" id="jo7-cn-bRe"/>
                                             <constraint firstItem="nod-GR-FDQ" firstAttribute="centerY" secondItem="RYf-P4-mr2" secondAttribute="centerY" id="wiq-Fp-7Hn"/>
@@ -149,17 +149,14 @@
                                             <action selector="backButtonTapped:" destination="8Jh-yo-HiC" eventType="touchUpInside" id="nI8-VY-kBH"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VZ-kX-eyD">
-                                        <rect key="frame" x="10" y="102" width="394" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="wn8-6n-vaV"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VZ-kX-eyD">
+                                        <rect key="frame" x="10" y="111.5" width="394" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 April" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9b-Cb-NfS">
-                                        <rect key="frame" x="182" y="147" width="75" height="30"/>
+                                        <rect key="frame" x="182" y="138" width="75" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0K0-Rb-e0u"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="jUj-nB-mxN"/>
@@ -169,7 +166,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iiK-t3-NTe">
-                                        <rect key="frame" x="156" y="147" width="25" height="30"/>
+                                        <rect key="frame" x="156" y="138" width="25" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="0cx-fN-VVK"/>
                                             <constraint firstAttribute="height" constant="32.5" id="JiO-ys-u11"/>

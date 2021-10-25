@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeEventsViewController: UIViewController {
-
+    
     @IBOutlet weak var countriesTable: UITableView!
     @IBOutlet weak var menuCollection: UICollectionView!
     var viewModel: HomeEventsViewModel?
@@ -20,6 +20,7 @@ class HomeEventsViewController: UIViewController {
     var indicatorView = UIView()
     let indicatorHeight : CGFloat = 3
     var eventTypeName = ""
+    var currentPageIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ class HomeEventsViewController: UIViewController {
     }
     
     func setCollectionIndicator() {
-        indicatorView.backgroundColor = .white
+        indicatorView.backgroundColor = .cyan
         indicatorView.frame = CGRect(x: menuCollection.bounds.minX, y: menuCollection.bounds.maxY - indicatorHeight, width: menuCollection.bounds.width / CGFloat(menuTitles!.count), height: indicatorHeight)
         menuCollection.addSubview(indicatorView)
     }
@@ -86,24 +87,26 @@ class HomeEventsViewController: UIViewController {
     
     
     func refreshContent(index: Int){
-        viewModel?.getEventsData(linkType: .Eventdetails, pageIndex: 1, type: eventTypeName)
-
+        viewModel?.getEventsData(linkType: .Eventdetails, pageIndex: 0, type: eventTypeName)
+        
         
         let loader = self.loader()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
             var updatedEvents = self.viewModel?.getEventDetails()
-                self.eventDetails?.removeAll()
-                self.eventDetails = updatedEvents
-                updatedEvents?.removeAll()
-            
+            self.eventDetails?.removeAll()
+            self.eventDetails = updatedEvents
+            updatedEvents?.removeAll()
+            self.countriesTable.reloadData()
+            self.currentPageIndex = 0
             self.stopLoader(loader: loader)
+            
             let desiredX = (self.menuCollection.bounds.width / CGFloat((self.menuTitles?.count)!)) * CGFloat(self.selectedIndex)
             UIView.animate(withDuration: 0.3) {
                 self.indicatorView.frame = CGRect(x: desiredX, y: self.menuCollection.bounds.maxY - self.indicatorHeight, width: self.menuCollection.bounds.width / CGFloat((self.menuTitles?.count)!), height: self.indicatorHeight)
             }
         }
         self.countriesTable.reloadData()
-
+        
     }
 }
 
@@ -122,7 +125,7 @@ extension HomeEventsViewController : UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+        
         
         var eventDetailsViewController = EventDetailsViewController()
         eventDetailsViewController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? EventDetailsViewController)!
@@ -156,3 +159,25 @@ extension HomeEventsViewController : UICollectionViewDelegate, UICollectionViewD
 }
 
 
+extension HomeEventsViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (countriesTable.contentSize.height-100-scrollView.frame.size.height){
+            if currentPageIndex == 4 {
+                currentPageIndex = 3
+            }else{
+                if currentPageIndex < 3 {
+                    currentPageIndex += 1
+                }
+            }
+            if currentPageIndex != 3 {
+                viewModel?.getEventsData(linkType: .Eventdetails, pageIndex: currentPageIndex, type: eventTypeName)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    let updatedEvents = self.viewModel?.getEventDetails()
+                    self.eventDetails = updatedEvents
+                    self.countriesTable.reloadData()
+                }
+            }
+        }
+    }
+}
