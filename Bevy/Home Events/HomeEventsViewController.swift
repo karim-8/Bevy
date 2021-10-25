@@ -19,7 +19,7 @@ class HomeEventsViewController: UIViewController {
     var eventDetails: [EventData]?
     var indicatorView = UIView()
     let indicatorHeight : CGFloat = 3
-
+    var eventTypeName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +30,6 @@ class HomeEventsViewController: UIViewController {
         setCollectionIndicator()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-            
-            
-        }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
@@ -73,6 +69,7 @@ class HomeEventsViewController: UIViewController {
     }
     
     @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        
         if sender.direction == .left {
             if selectedIndex < menuTitles!.count - 1 {
                 selectedIndex += 1
@@ -84,21 +81,29 @@ class HomeEventsViewController: UIViewController {
         }
         selectedIndexPath = IndexPath(item: selectedIndex, section: 0)
         menuCollection.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredVertically)
-        refreshContent()
+        refreshContent(index: 1)
     }
     
     
-    func refreshContent(){
-        countriesTable.reloadData()
+    func refreshContent(index: Int){
+        viewModel?.getEventsData(linkType: .Eventdetails, pageIndex: 1, type: eventTypeName)
+
         
         let loader = self.loader()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            var updatedEvents = self.viewModel?.getEventDetails()
+                self.eventDetails?.removeAll()
+                self.eventDetails = updatedEvents
+                updatedEvents?.removeAll()
+            
             self.stopLoader(loader: loader)
             let desiredX = (self.menuCollection.bounds.width / CGFloat((self.menuTitles?.count)!)) * CGFloat(self.selectedIndex)
             UIView.animate(withDuration: 0.3) {
                 self.indicatorView.frame = CGRect(x: desiredX, y: self.menuCollection.bounds.maxY - self.indicatorHeight, width: self.menuCollection.bounds.width / CGFloat((self.menuTitles?.count)!), height: self.indicatorHeight)
             }
         }
+        self.countriesTable.reloadData()
+
     }
 }
 
@@ -145,7 +150,8 @@ extension HomeEventsViewController : UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.item
-        refreshContent()
+        eventTypeName = (menuTitles?[indexPath.row].name!)!
+        refreshContent(index: indexPath.row)
     }
 }
 

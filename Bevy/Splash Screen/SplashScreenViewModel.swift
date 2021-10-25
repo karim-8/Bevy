@@ -75,7 +75,8 @@ class SplashScreenViewModel {
     
     //MARK:- GET EVENTS DATA
     func getEventsData(linkType: UrlEndPoints) {
-        let url = Request(url: linkType.rawValue, param: "")
+        let parameters = linkType == UrlEndPoints.EventType ? "" : "?event_type=Sports" + "&page=0"
+        let url = Request(url: linkType.rawValue, param: parameters)
         NetworkClient().get(request: url) { [weak self] result in
             switch result {
             case .success(let event):

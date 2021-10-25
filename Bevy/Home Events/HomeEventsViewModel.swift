@@ -11,22 +11,39 @@ import Foundation
 
 class HomeEventsViewModel {
     
-    let coordinator: HomeEventsCoordinator?
-    
-    init(coordinator: HomeEventsCoordinator) {
-        self.coordinator = coordinator
-    }
     
     //PROPERTIES
     var eventsTypes = [EventType]()
-    
+    var eventDetails = [EventData]()
 
-    
-    func getEventsTypes() -> [EventType] {
-        return eventsTypes
+    //MARK:- GET EVENTS DATA
+    func getEventsData(linkType: UrlEndPoints, pageIndex: Int, type: String) {
+        let parameters = linkType == UrlEndPoints.EventType ? "" : "?event_type=\(type)" + "&page=\(pageIndex)"
+        let url = Request(url: linkType.rawValue, param: parameters)
+        //print("The url is..\(url)")
+        NetworkClient().get(request: url) { [weak self] result in
+            switch result {
+            case .success(let event):
+                self?.decodeResult(jsonData: event,link: linkType)
+            case .failure(let error):
+                print("Error in VM... \(error)")
+            }
+        }
     }
     
-    func getEventsCount() -> Int {
-        return eventsTypes.count
+    //MARK:- DECODE JSON RESULT
+    func decodeResult(jsonData: Data, link: UrlEndPoints) {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .secondsSince1970
+        let eventsData = try? decoder.decode([EventData].self, from: jsonData)
+        if let events = eventsData {
+            self.eventDetails.removeAll()
+            self.eventDetails.append(contentsOf: events)
+        }
+    }
+    
+    func getEventDetails() -> [EventData] {
+        return self.eventDetails
     }
 }
