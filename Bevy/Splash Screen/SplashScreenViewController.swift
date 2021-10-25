@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SplashScreenViewController: UIViewController {
     
@@ -13,6 +14,7 @@ class SplashScreenViewController: UIViewController {
     private var bevyLogo = UIImageView()
     var viewModel: SplashScreenViewModel?
     private let coordinator = SplashScreenCoordinator()
+    let persistant = PresesistancService.shared.context
     
     //MARK:- VIEW DID LOAD
     override func viewDidLoad() {
@@ -22,6 +24,7 @@ class SplashScreenViewController: UIViewController {
         getEventsDataList()
         setBackGroundColor()
         createSplashLogo()
+        
     }
     
     //MARK:- GET EVENTS TYPES

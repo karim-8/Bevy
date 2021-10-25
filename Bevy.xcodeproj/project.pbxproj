@@ -26,7 +26,6 @@
 		8A80860F27233FD200A4F146 /* HomeEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80860E27233FD200A4F146 /* HomeEventsViewController.swift */; };
 		8A80861427234CAC00A4F146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80861327234CAC00A4F146 /* ViewController.swift */; };
 		8AE60C50272467C300785E21 /* HomeEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C4F272467C300785E21 /* HomeEventsViewModel.swift */; };
-		8AE60C5227247D9500785E21 /* HomeEventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C5127247D9500785E21 /* HomeEventsCoordinator.swift */; };
 		8AE60C5527255F6200785E21 /* ActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C5427255F6200785E21 /* ActivityLoader.swift */; };
 		8AE60C5727257A4D00785E21 /* ImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C5627257A4D00785E21 /* ImageResize.swift */; };
 		8AE60C5A2725F16100785E21 /* Bevy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C582725F16100785E21 /* Bevy.xcdatamodeld */; };
@@ -81,7 +80,6 @@
 		8A80860E27233FD200A4F146 /* HomeEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsViewController.swift; sourceTree = "<group>"; };
 		8A80861327234CAC00A4F146 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8AE60C4F272467C300785E21 /* HomeEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsViewModel.swift; sourceTree = "<group>"; };
-		8AE60C5127247D9500785E21 /* HomeEventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsCoordinator.swift; sourceTree = "<group>"; };
 		8AE60C5427255F6200785E21 /* ActivityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLoader.swift; sourceTree = "<group>"; };
 		8AE60C5627257A4D00785E21 /* ImageResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResize.swift; sourceTree = "<group>"; };
 		8AE60C592725F16100785E21 /* Bevy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bevy.xcdatamodel; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 			children = (
 				8A80860E27233FD200A4F146 /* HomeEventsViewController.swift */,
 				8AE60C4F272467C300785E21 /* HomeEventsViewModel.swift */,
-				8AE60C5127247D9500785E21 /* HomeEventsCoordinator.swift */,
 				8A3FF525272409780083AEE1 /* Event Details */,
 			);
 			path = "Home Events";
@@ -436,7 +433,6 @@
 				8AE60C6C2725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift in Sources */,
 				8A8085AB27217E0000A4F146 /* SceneDelegate.swift in Sources */,
 				8AE60C5527255F6200785E21 /* ActivityLoader.swift in Sources */,
-				8AE60C5227247D9500785E21 /* HomeEventsCoordinator.swift in Sources */,
 				8A3F650C2726FF2F00C3E9F6 /* EventItemDetail.swift in Sources */,
 				8A8085E92721CCDA00A4F146 /* EventData.swift in Sources */,
 				8A8085E22721B6B500A4F146 /* SplashScreenViewModel.swift in Sources */,

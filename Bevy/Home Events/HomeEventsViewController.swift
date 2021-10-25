@@ -32,10 +32,7 @@ class HomeEventsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
             
-//            let loader = self.loader()
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//                self.stopLoader(loader: loader)
-//            }
+            
         }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,14 +90,19 @@ class HomeEventsViewController: UIViewController {
     
     func refreshContent(){
         countriesTable.reloadData()
-        let desiredX = (menuCollection.bounds.width / CGFloat((menuTitles?.count)!)) * CGFloat(selectedIndex)
-        UIView.animate(withDuration: 0.3) {
-            self.indicatorView.frame = CGRect(x: desiredX, y: self.menuCollection.bounds.maxY - self.indicatorHeight, width: self.menuCollection.bounds.width / CGFloat((self.menuTitles?.count)!), height: self.indicatorHeight)
+        
+        let loader = self.loader()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.stopLoader(loader: loader)
+            let desiredX = (self.menuCollection.bounds.width / CGFloat((self.menuTitles?.count)!)) * CGFloat(self.selectedIndex)
+            UIView.animate(withDuration: 0.3) {
+                self.indicatorView.frame = CGRect(x: desiredX, y: self.menuCollection.bounds.maxY - self.indicatorHeight, width: self.menuCollection.bounds.width / CGFloat((self.menuTitles?.count)!), height: self.indicatorHeight)
+            }
         }
     }
 }
 
-//Table View Data
+//MARK:- TABLE VIEW DELEGATE & DATA SOURCE
 extension HomeEventsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,6 +126,7 @@ extension HomeEventsViewController : UITableViewDelegate, UITableViewDataSource 
     }
 }
 
+//MARK:- COLLECTION VIEW DELEGATE & DATA SOURCE
 extension HomeEventsViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
