@@ -17,6 +17,7 @@ extension EventDetailsEntity {
     }
 
     @NSManaged public var longitude: String?
+    @NSManaged public var descriptions: String?
     @NSManaged public var latitude: String?
     @NSManaged public var end_date: String?
     @NSManaged public var start_date: String?

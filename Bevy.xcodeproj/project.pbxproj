@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A3F650C2726FF2F00C3E9F6 /* EventItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F650B2726FF2F00C3E9F6 /* EventItemDetail.swift */; };
 		8A3FF5272724098F0083AEE1 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3FF5262724098F0083AEE1 /* EventDetailsViewController.swift */; };
 		8A8085A927217E0000A4F146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085A827217E0000A4F146 /* AppDelegate.swift */; };
 		8A8085AB27217E0000A4F146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8085AA27217E0000A4F146 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		8AE60C6B2725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C672725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift */; };
 		8AE60C6C2725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C682725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift */; };
 		8AE60C6D2725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C692725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift */; };
+		8AE60C7B2726466C00785E21 /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C7A2726466C00785E21 /* UserSessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A3F650B2726FF2F00C3E9F6 /* EventItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemDetail.swift; sourceTree = "<group>"; };
 		8A3FF5262724098F0083AEE1 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		8A8085A527217E0000A4F146 /* Bevy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bevy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8085A827217E0000A4F146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		8AE60C672725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventTypeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8AE60C682725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8AE60C692725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8AE60C7A2726466C00785E21 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,7 @@
 			children = (
 				8A8085E62721CBF200A4F146 /* EventType.swift */,
 				8A8085E82721CCDA00A4F146 /* EventData.swift */,
+				8A3F650B2726FF2F00C3E9F6 /* EventItemDetail.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -228,7 +233,6 @@
 				8A8085AA27217E0000A4F146 /* SceneDelegate.swift */,
 				8A8085A827217E0000A4F146 /* AppDelegate.swift */,
 				8AE60C582725F16100785E21 /* Bevy.xcdatamodeld */,
-				8AE60C5B2725F4BA00785E21 /* PresetanceService.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -277,6 +281,8 @@
 				8AE60C672725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift */,
 				8AE60C682725F7C600785E21 /* EventDetailsEntity+CoreDataClass.swift */,
 				8AE60C692725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift */,
+				8AE60C7A2726466C00785E21 /* UserSessionManager.swift */,
+				8AE60C5B2725F4BA00785E21 /* PresetanceService.swift */,
 			);
 			path = Caching;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				8AE60C50272467C300785E21 /* HomeEventsViewModel.swift in Sources */,
 				8AE60C5727257A4D00785E21 /* ImageResize.swift in Sources */,
 				8AE60C6A2725F7C600785E21 /* EventTypeEntity+CoreDataClass.swift in Sources */,
+				8AE60C7B2726466C00785E21 /* UserSessionManager.swift in Sources */,
 				8AE60C6B2725F7C600785E21 /* EventTypeEntity+CoreDataProperties.swift in Sources */,
 				8A8085E72721CBF200A4F146 /* EventType.swift in Sources */,
 				8AE60C5C2725F4BA00785E21 /* PresetanceService.swift in Sources */,
@@ -430,6 +437,7 @@
 				8A8085AB27217E0000A4F146 /* SceneDelegate.swift in Sources */,
 				8AE60C5527255F6200785E21 /* ActivityLoader.swift in Sources */,
 				8AE60C5227247D9500785E21 /* HomeEventsCoordinator.swift in Sources */,
+				8A3F650C2726FF2F00C3E9F6 /* EventItemDetail.swift in Sources */,
 				8A8085E92721CCDA00A4F146 /* EventData.swift in Sources */,
 				8A8085E22721B6B500A4F146 /* SplashScreenViewModel.swift in Sources */,
 				8A80860F27233FD200A4F146 /* HomeEventsViewController.swift in Sources */,
