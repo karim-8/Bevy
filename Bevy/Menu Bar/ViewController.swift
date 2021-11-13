@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  MenuBar2
 //
-//  Created by eslam shaker on 9/2/18.
-//  Copyright © 2018 eslam shaker. All rights reserved.
+//  Created by Karim Ahmed on 9/2/18.
+//  Copyright © 2018 Karim Ahmed. All rights reserved.
 //
 
 import UIKit
