@@ -15,6 +15,7 @@ class HomeEventsViewController: UIViewController {
     let searchController = UISearchController()
     var viewModel: HomeEventsViewModel?
     let refreshControl = UIRefreshControl()
+    let coordinator = HomeEventsCoordinator()
     var selectedIndex = 0
     var selectedIndexPath = IndexPath(item: 0, section: 0)
     var menuTitles: [EventType]?
@@ -30,7 +31,8 @@ class HomeEventsViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionItems()
         setupNavigationBar()
-        setupTableViewItems()
+        setupTableViewCell()
+        setupCollectionViewCell()
         setViewSwipe()
         setCollectionIndicator()
         initSearchController()
@@ -43,18 +45,26 @@ class HomeEventsViewController: UIViewController {
         setupNavigationBar()
     }
     
-    //MARK:- SETUP COLLECTION ITEMS
+    //MARK:- SETUP COLLECTION VIEW
     func setupCollectionItems() {
         self.menuCollection.reloadData()
         self.menuCollection.selectItem(at: self.selectedIndexPath, animated: false, scrollPosition: .centeredVertically)
     }
     
-    //MARK:- SETUP TABLE VIEW ITEMS
-    func setupTableViewItems() {
+    //MARK:- SETUP TABLE VIEW CELL
+    func setupTableViewCell() {
         let nib = UINib(nibName: "EventHomeTableViewCell", bundle: nil)
         countriesTable.register(nib, forCellReuseIdentifier: "eventCell")
         countriesTable.separatorColor = .clear
         countriesTable.reloadData()
+    }
+    
+    //MARK:- SETUP COLLECTION VIEW CELL
+    func setupCollectionViewCell() {
+        let nib = UINib(nibName: "MenuBarCollectionViewCell", bundle: nil)
+        menuCollection.register(nib, forCellWithReuseIdentifier: "MenuBarCollectionViewCell")
+        menuCollection.reloadData()
+
     }
     
     //MARK:- SETUP NAVIGATION BAR
@@ -95,7 +105,7 @@ class HomeEventsViewController: UIViewController {
     
     //MARK:- SET COLLECTION INDICATOR
     func setCollectionIndicator() {
-        indicatorView.backgroundColor = .cyan
+        indicatorView.backgroundColor = .lightGray
         if let titles = menuTitles {
             indicatorView.frame = CGRect(x: menuCollection.bounds.minX, y: menuCollection.bounds.maxY - indicatorHeight, width: menuCollection.bounds.width / CGFloat(titles.count), height: indicatorHeight)
         }
@@ -155,91 +165,5 @@ class HomeEventsViewController: UIViewController {
     //MARK:- DEINIT
     deinit {
         viewModel = nil
-    }
-}
-
-//MARK:- EVENTS TABLE VIEW DELEGATE & DATA SOURCE
-extension HomeEventsViewController : UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if searchController.isActive {
-            return filteredEvent.count
-        }
-        return eventDetails?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if searchController.isActive {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventHomeTableViewCell
-            cell?.eventName.text = filteredEvent[indexPath.row].name
-            cell?.descriptionLabel.text = filteredEvent[indexPath.row].description
-            cell?.eventdate.text = filteredEvent[indexPath.row].start_date ?? "12 April"
-            cell?.configreImage(image: filteredEvent[indexPath.row].cover ?? "")
-            return cell ?? UITableViewCell()
-        }else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventHomeTableViewCell
-            cell?.eventName.text = eventDetails?[indexPath.row].name
-            cell?.descriptionLabel.text = eventDetails?[indexPath.row].description
-            cell?.eventdate.text = eventDetails?[indexPath.row].start_date ?? "12 April"
-            cell?.configreImage(image: eventDetails?[indexPath.row].cover ?? "")
-            return cell ?? UITableViewCell()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        var eventDetailsViewController = EventDetailsViewController()
-        eventDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? EventDetailsViewController ?? EventDetailsViewController()
-        
-        if (searchController.isActive) {
-            eventDetailsViewController.detailsItems = filteredEvent[indexPath.row]
-        }else {
-            eventDetailsViewController.detailsItems = eventDetails?[indexPath.row]
-        }
-        eventDetailsViewController.viewModel = EventDetailsViewModel()
-        navigationController?.pushViewController(eventDetailsViewController, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
-    }
-}
-
-//MARK:- MENU ITEMS COLLECTION VIEW DELEGATE & DATA SOURCE
-extension HomeEventsViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menuTitles?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as? MenuCell
-        cell?.setupCell(text: menuTitles?[indexPath.item].name ?? "")
-        return cell ?? UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        return CGSize(width: self.view.frame.width / CGFloat(menuTitles?.count ?? 0), height: collectionView.bounds.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        selectedIndex = indexPath.item
-        eventTypeName = menuTitles?[indexPath.row].name ?? ""
-        refreshContent(index: indexPath.row)
-    }
-}
-
-//MARK:- SCROLL VIEW DELEGTES METHODS
-extension HomeEventsViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let currentPage = viewModel?.getSwipigPage(countriesTable: countriesTable, scrollView: scrollView, currentPageIndex: currentPageIndex, eventType: eventTypeName)
-        currentPageIndex = currentPage ?? 0
     }
 }

@@ -15,7 +15,7 @@ class HomeEventsViewModel {
     //PROPERTIES
     var eventsTypes = [EventType]()
     var eventDetails = [EventData]()
-
+    
     //MARK:- GET EVENTS DATA
     func getEventsData(linkType: UrlEndPoints, pageIndex: Int, type: String) {
         let parameters = linkType == UrlEndPoints.EventType ? "" : "?event_type=\(type)" + "&page=\(pageIndex)"
@@ -50,29 +50,34 @@ class HomeEventsViewModel {
     }
     
     //MARK:- GET SWIPING PAGE
-    func getSwipigPage(countriesTable: UITableView, scrollView: UIScrollView, currentPageIndex: Int, eventType: String) -> Int{
+    func getSwipigPage(countriesTable: UITableView, scrollView: UIScrollView, currentPageIndex: Int, eventType: String) -> Int {
         
         var pageIndex = currentPageIndex
         let position = scrollView.contentOffset.y
-
+        
         if position > (countriesTable.contentSize.height-100-scrollView.frame.size.height) {
-           
+            
             if pageIndex == 4 {
                 pageIndex = 3
                 
             }else {
                 if currentPageIndex < 3 {
                     pageIndex += 1
-                    
-                    getEventsData(linkType: .Eventdetails, pageIndex: currentPageIndex, type: eventType)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        let updatedEvents = self.getEventDetails()
-                        self.eventDetails = updatedEvents
-                        countriesTable.reloadData()
-                    }
+                    getEventByType(currentPageIndex: currentPageIndex, type: eventType , countriesTable: countriesTable)
                 }
             }
         }
         return pageIndex
+    }
+    
+    //MARK:- GET EVENT BY TYPE
+    func getEventByType(currentPageIndex: Int, type: String, countriesTable: UITableView) {
+        getEventsData(linkType: .Eventdetails, pageIndex: currentPageIndex, type: type)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            let updatedEvents = self.getEventDetails()
+            self.eventDetails = updatedEvents
+            countriesTable.reloadData()
+        }
+        
     }
 }
