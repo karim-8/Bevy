@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 
 class HomeEventsViewModel {
@@ -44,7 +44,35 @@ class HomeEventsViewModel {
         }
     }
     
+    //MARK:- GET EVENT DETAILS
     func getEventDetails() -> [EventData] {
         return self.eventDetails
+    }
+    
+    //MARK:- GET SWIPING PAGE
+    func getSwipigPage(countriesTable: UITableView, scrollView: UIScrollView, currentPageIndex: Int, eventType: String) -> Int{
+        
+        var pageIndex = currentPageIndex
+        let position = scrollView.contentOffset.y
+
+        if position > (countriesTable.contentSize.height-100-scrollView.frame.size.height) {
+           
+            if pageIndex == 4 {
+                pageIndex = 3
+                
+            }else {
+                if currentPageIndex < 3 {
+                    pageIndex += 1
+                    
+                    getEventsData(linkType: .Eventdetails, pageIndex: currentPageIndex, type: eventType)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        let updatedEvents = self.getEventDetails()
+                        self.eventDetails = updatedEvents
+                        countriesTable.reloadData()
+                    }
+                }
+            }
+        }
+        return pageIndex
     }
 }

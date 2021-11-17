@@ -29,6 +29,7 @@
 		8A80860D2723374200A4F146 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80860C2723374200A4F146 /* MenuCell.swift */; };
 		8A80860F27233FD200A4F146 /* HomeEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80860E27233FD200A4F146 /* HomeEventsViewController.swift */; };
 		8A80861427234CAC00A4F146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A80861327234CAC00A4F146 /* ViewController.swift */; };
+		8A86B20B2744E457008DF41D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86B20A2744E457008DF41D /* SearchBar.swift */; };
 		8AE60C50272467C300785E21 /* HomeEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C4F272467C300785E21 /* HomeEventsViewModel.swift */; };
 		8AE60C5527255F6200785E21 /* ActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C5427255F6200785E21 /* ActivityLoader.swift */; };
 		8AE60C5727257A4D00785E21 /* ImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE60C5627257A4D00785E21 /* ImageResize.swift */; };
@@ -87,6 +88,7 @@
 		8A80860C2723374200A4F146 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		8A80860E27233FD200A4F146 /* HomeEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsViewController.swift; sourceTree = "<group>"; };
 		8A80861327234CAC00A4F146 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A86B20A2744E457008DF41D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8AE60C4F272467C300785E21 /* HomeEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsViewModel.swift; sourceTree = "<group>"; };
 		8AE60C5427255F6200785E21 /* ActivityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLoader.swift; sourceTree = "<group>"; };
 		8AE60C5627257A4D00785E21 /* ImageResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResize.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				8AE60C5427255F6200785E21 /* ActivityLoader.swift */,
 				8AE60C5627257A4D00785E21 /* ImageResize.swift */,
 				8A3F6514272773A500C3E9F6 /* ImageView.swift */,
+				8A86B20A2744E457008DF41D /* SearchBar.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				8A3FF5272724098F0083AEE1 /* EventDetailsViewController.swift in Sources */,
 				8A8085A927217E0000A4F146 /* AppDelegate.swift in Sources */,
 				8A8085E42721B74900A4F146 /* SplashScreenCoordinator.swift in Sources */,
+				8A86B20B2744E457008DF41D /* SearchBar.swift in Sources */,
 				8AE60C6D2725F7C600785E21 /* EventDetailsEntity+CoreDataProperties.swift in Sources */,
 				8A80860D2723374200A4F146 /* MenuCell.swift in Sources */,
 				8A8085EC2721CE2B00A4F146 /* NetworkClient.swift in Sources */,
