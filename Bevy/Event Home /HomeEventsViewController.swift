@@ -15,7 +15,6 @@ class HomeEventsViewController: UIViewController {
     let searchController = UISearchController()
     var viewModel: HomeEventsViewModel?
     let refreshControl = UIRefreshControl()
-    let coordinator = HomeEventsCoordinator()
     var selectedIndex = 0
     var selectedIndexPath = IndexPath(item: 0, section: 0)
     var menuTitles: [EventType]?

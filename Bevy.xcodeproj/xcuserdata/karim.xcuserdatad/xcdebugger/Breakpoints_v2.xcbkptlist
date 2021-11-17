@@ -222,8 +222,8 @@
             filePath = "Bevy/Extenstions/HomeEventsViewController+UITableView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -231,16 +231,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "55902406-0357-4A95-8029-3BB7DBF86C3F"
+            uuid = "A0B78278-EE1B-454C-B7B1-CCF55DBC8556"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Bevy/Extenstions/HomeEventsViewController+UITableView.swift"
+            filePath = "Bevy/Event Home /HomeEventsCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "navigateTo(searchController:filteredEvent:eventDetails:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

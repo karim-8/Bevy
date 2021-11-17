@@ -39,19 +39,10 @@ extension HomeEventsViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        var eventDetailsViewController = EventDetailsViewController()
-        
-        eventDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? EventDetailsViewController ?? EventDetailsViewController()
-        
-        
-        if (searchController.isActive) {
-            eventDetailsViewController.detailsItems = filteredEvent[indexPath.row]
-        }else {
-            eventDetailsViewController.detailsItems = eventDetails?[indexPath.row]
-        }
-        eventDetailsViewController.viewModel = EventDetailsViewModel()
-        navigationController?.pushViewController(eventDetailsViewController, animated: true)
+        //inject navigation
+        let view = EventDetailsViewController()
+        let coordinator = HomeEventsCoordinator(view: view)
+        coordinator.navigateTo( searchController: searchController, filteredEvent: filteredEvent, eventDetails: eventDetails!, indexPath: indexPath, navigationController: self.navigationController ?? UINavigationController())
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
