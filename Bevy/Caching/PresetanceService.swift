@@ -34,7 +34,6 @@ class PresesistancService {
         if context.hasChanges {
             do {
                 try context.save()
-                NotificationCenter.default.post(name: NSNotification.Name("persistantUpdated"), object: nil)
             } catch {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")

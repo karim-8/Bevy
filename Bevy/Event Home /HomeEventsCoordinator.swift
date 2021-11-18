@@ -11,16 +11,14 @@ class HomeEventsCoordinator {
     
     //MARK:- PROPERTIES
     var eventDetailsViewController: EventDetailsViewController?
-    var navigationController: UINavigationController?
     
     //MARK:- INIT
-    init(view: EventDetailsViewController, navigation: UINavigationController) {
+    init(view: EventDetailsViewController) {
         eventDetailsViewController = view
-        navigationController = navigation
     }
         
     //MARK:- NAVIGATE TO
-    func navigateTo(searchController: UISearchController, filteredEvent: [EventData], eventDetails: [EventData], indexPath: IndexPath ) {
+    func navigateTo(searchController: UISearchController, filteredEvent: [EventData], eventDetails: [EventData], indexPath: IndexPath, navigationController: UINavigationController) {
         
         eventDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as? EventDetailsViewController ?? EventDetailsViewController()
         if (searchController.isActive) {
@@ -28,6 +26,6 @@ class HomeEventsCoordinator {
         }else {
             eventDetailsViewController?.detailsItems = eventDetails[indexPath.row]
         }
-        navigationController?.pushViewController(eventDetailsViewController ?? UIViewController(), animated: true)
+        navigationController.pushViewController(eventDetailsViewController ?? UIViewController(), animated: true)
     }
 }

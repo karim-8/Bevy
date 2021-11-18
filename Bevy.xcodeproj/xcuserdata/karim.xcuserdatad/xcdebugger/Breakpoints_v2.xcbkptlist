@@ -46,8 +46,8 @@
             filePath = "Bevy/Caching/PresetanceService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "fetch(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,9 +238,25 @@
             filePath = "Bevy/Event Home /HomeEventsCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "navigateTo(searchController:filteredEvent:eventDetails:indexPath:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "navigateTo(searchController:filteredEvent:eventDetails:indexPath:navigationController:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FAD9040B-CA28-47B3-AA4C-F79161A4A9A2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bevy/Splash Screen/SplashScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "decodeResult(jsonData:link:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

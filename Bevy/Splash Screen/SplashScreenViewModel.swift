@@ -80,7 +80,7 @@ class SplashScreenViewModel {
         NetworkClient().get(request: url) { [weak self] result in
             switch result {
             case .success(let event):
-                self?.decodeResult(jsonData: event,link: linkType)
+                self?.decodeResult(jsonData: event, link: linkType)
             case .failure(let error):
                 print("Error in VM... \(error)")
                 self?.fetchData(link: linkType)

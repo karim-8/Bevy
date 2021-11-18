@@ -34,7 +34,9 @@ class EventDetailsViewController: UIViewController {
     
     //MARK:- BACK BUTTON TAPPED
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)
+        let coordinator = EventDetailsCoordinator(view: self, naviagtion: navigationController ?? UINavigationController())
+        coordinator.popViewController()
     }
     
     //MARK:- FAVOURITE BUTTON TAPPED
